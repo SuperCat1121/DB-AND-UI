@@ -61,14 +61,6 @@ public class JDBCTemplate {
 		}
 	}
 	
-	public static void close(PreparedStatement pstmt) {
-		try {
-			pstmt.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-	
 	public static void commit(Connection con) {
 		try {
 			con.commit();

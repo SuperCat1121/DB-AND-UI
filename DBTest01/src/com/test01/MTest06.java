@@ -32,10 +32,11 @@ public class MTest06 {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(con);
+			sc.close();
 		}
-		close(pstmt);
-		close(con);
-		sc.close();
 	}
-
+	
 }
