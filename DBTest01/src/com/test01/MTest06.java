@@ -11,6 +11,7 @@ public class MTest06 {
 
 	public static void main(String[] args) {
 		// DELETE FROM MYTEST WHERE MNO=?
+		//
 		Scanner sc = new Scanner(System.in);
 		System.out.print("조회할 회원번호 : ");
 		int mno = sc.nextInt();

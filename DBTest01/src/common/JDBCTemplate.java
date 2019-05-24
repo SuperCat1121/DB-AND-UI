@@ -11,6 +11,7 @@ public class JDBCTemplate {
 
 	// 1. driver 연결
 	// 2. 계정 연결
+	//
 	public static Connection getConnection() {
 		
 		try {
