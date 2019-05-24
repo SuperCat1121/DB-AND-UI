@@ -13,7 +13,7 @@ public class MTest06 {
 		// DELETE FROM MYTEST WHERE MNO=?
 		Scanner sc = new Scanner(System.in);
 		System.out.print("조회할 회원번호 : ");
-		int mno = sc.nextInt();fdgdfg
+		int mno = sc.nextInt();
 		
 		Connection con = getConnection();
 		PreparedStatement pstmt = null;
