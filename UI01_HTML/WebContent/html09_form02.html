@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html09</title>
+</head>
+<body>
+	<h1>select 요소</h1>
+	<form action="#" method="get">
+		<fieldset>
+			<legend>여러줄 글 상자와 목록 상자</legend>
+			<p>
+				<label for="reply">답글</label><br>
+				<textarea rows="3" cols="30" id="reply" name="re"></textarea>
+			</p>
+			<p>
+				과목 선택
+				<select name="select01">
+					<option value="html">HTML</option>
+					<option value="css">CSS</option>
+					<option value="js">JavaScript</option>
+					<option value="jq">JQuery</option>
+				</select>
+			</p>
+			<p>
+				저녁 선택
+				<select name="select02">
+					<optgroup label="분식">
+						<option value="라면"> 라면 </option>
+						<option value="김밥"> 김밥 </option>
+						<option value="떡볶이"> 떡볶이 </option>
+					</optgroup>
+					<optgroup label="중식">
+						<option value="짜장면"> 짜장면 </option>
+						<option value="짬뽕"> 짬뽕 </option>
+						<option value="탕수육"> 탕수육 </option>
+					</optgroup>
+				</select>
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

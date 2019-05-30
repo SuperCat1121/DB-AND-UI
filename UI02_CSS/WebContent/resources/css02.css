@@ -1,0 +1,151 @@
+/* 타입 선택자 */
+
+pre {
+	text-align: center;
+}
+
+/* id 선택자 (유일한 하나)*/
+#sid01 {
+	color: red;
+}
+
+#sid02 {
+	color: blue;
+}
+
+#sid03 {
+	background-color: black;
+	color: yellow;
+}
+
+/* class 선택자 */
+.sclass {
+	color: blue;
+}
+
+/* 전체 선택자 */
+* {
+	text-align: left;
+}
+
+/*자식 선택자 */
+#at > p { /* id=at 의 바로 아래의 p만 선택 
+			(안에있는 다른 태그 속의 p는 선택 안됨)*/
+	color: pink;
+}
+
+/* 하위 선택자 */
+div span {
+	background-color: yellow;
+}
+
+/* 인접 선택자 */
+h3+b {
+	color: orange;
+}
+
+span+b {
+	background-color: red;
+}
+
+/* 속성 선택자 */
+
+p[title] {
+	color: orange;
+}
+
+p[title='a'] {
+	background-color: lime;
+}
+
+/* 가상 클래스 선택자 */
+
+a:link {
+	color: green;
+	font-size: 25px;
+}
+
+a:visited {
+	color: pink;
+	font-size: 25px;
+}
+
+a:hover {
+	color: white;
+	background-color: black;
+	font-family: fantasy;
+	font-size: 50px;
+}
+
+a:active {
+	color: skyblue;
+}
+
+input:checked {
+	width: 100px;
+	height: 100px;
+}
+
+/* 종속 선택자 */
+
+li.sclass01 {
+	background-color: green;
+}
+
+li.sclass02#sidul {
+	font-size: 25px;
+}
+
+/* 그룹 선택자 */
+
+#my, p, pre, strong {
+	color: lime;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
