@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js03</title>
+<script type="text/javascript">
+
+	function alertTest() {
+		alert("내용 출력(단순 대화창)");
+	}
+	
+	function confirmTest() {
+		// confirm() : 확인/취소 버튼 제공(true/false 반환)
+		if (confirm("배경 화면을 파란색으로 바꿀까요?")) {
+			document.body.style.backgroundColor="blue";
+		} else {
+			alert("기존 색상 유지");
+		}
+	}
+	
+	function promptTest() {
+		// prompt() : 텍스트박스 제공, 확인/취소 버튼 제공
+		// 반환값은 텍스트 (취소 : null)
+		var txt = prompt("좋아하는 과목 번호를 선택해 주세요.\n [1:java 2:database 3:html/css]");
+		switch(txt) {
+		case "1":
+			alert("java가 재밌군요");
+			break;
+		case "2":
+			alert("database도 좋죠");
+			break;
+		case "3":
+			alert("화면은 바로바로 나와요");
+			break;
+		case null:
+			alert("하나를 적어주세요");
+			break;
+		default:
+			alert("1, 2, 3 중 하나를 적어주세요");
+		}
+	}
+
+</script>
+</head>
+<body>
+	<h1>window 객체가 제공하는 대화형 함수</h1>
+	<small>종류에는
+		<strong>alert(), confirm(), prompt()</strong>가 있다
+	</small>
+	<p>alert() : <button onclick="alertTest();">클릭!</button>
+	<p>confirm() : <button onclick="confirmTest();">클릭!</button>
+	<p>prompt() : <button onclick="promptTest();">클릭!</button>
+</body>
+</html>

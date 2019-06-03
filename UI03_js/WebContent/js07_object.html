@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function myClassQ() {
+			// 외부에서 접근 가능
+			this.name="kh정보교육원";
+			// 외부에서 접근 불가능
+			var name02 = "java프레임워크 개발자 양성 과정";
+			this.getName02 = function() {
+				return name02;
+			}
+		}
+		
+	var classQ02 = {
+			name : "kh정보교육원",
+			print : function() {
+				alert(classQ02.name + "_print");
+				return classQ02.name;
+			}
+	}
+	
+	//prototype
+	myClassQ.prototype.printName = function() {
+		var abc = "메롱";
+		alert(this.name + ", " + this.getName02() + "_proto:" + abc);
+	}
+	
+	// undefined : 정의되지 않음
+	function objTest() {
+		var cls = new myClassQ();
+	//	alert(cls.name);
+	//	alert(cls.name02);
+	//	alert(cls.getName02());
+	//	alert(classQ02.name);
+	//	classQ02.print();
+		cls.printName();
+	}
+	
+</script>
+</head>
+<body>
+	<pre>
+		객체의 구성
+		-메서드 : 기능 정의
+		속성 : 객체 내부 데이터
+		this : 객체 내부의 메서드나 속성을 정의할 때 사용
+		-프로토타입 "객체"
+	</pre>
+	
+	<button onclick="objTest();">객체</button>
+</body>
+</html>
