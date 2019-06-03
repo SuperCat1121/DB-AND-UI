@@ -1,0 +1,206 @@
+body {
+	background: #efefef;
+	font-family: "맑은 고딕";
+}
+
+a {
+	text-decoration: none;
+}
+.nav_control_top {
+	position: fixed;
+	right: 38px;
+	bottom: 0px;
+	z-index: 1;
+	border-right: 2px dashed white;
+}
+
+.nav_control_bottom {
+	position: fixed;
+	right: 5px;
+	bottom: 0px;
+	border: none;
+}
+
+/* --------------------------------------------- */
+#top {
+	position: relative;
+	top: -8px;
+	left: -9px;
+	width: 2300px;
+	height: 43px;
+	background: #008275;
+}
+
+#top_inner {
+	position: relative;
+	left: -140px;
+	/*background: lime;*/
+	width: 1500px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+#top_inner div {
+	display: inline;
+}
+
+.topmenu {
+	color: white;
+	position: relative;
+	top: -15px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#top a:link {
+	color: white;
+}
+
+#search_form {
+	display: inline-block;
+	margin-left: -6px;
+	margin-right: -6px;
+}
+
+.search_text {
+	position: relative;
+	top: -17px;
+	height: 37px;
+}
+/* --------------------------------------------- */
+#content {
+	background: white;
+	width: 1000px;
+	height: 1000px;
+	position: relative;
+	top: -8px;
+	left: 300px;
+	border: 1px solid #ccc;
+}
+
+#namu_document {
+	display: inline-block;
+	width: 300px;
+	height: 70px;
+	margin-top: -5px;
+	margin-left: 15px;
+	/*background: lime;*/
+}
+
+#namu_document a:link {
+	color : black;
+	text-decoration: none;
+}
+
+#namu_document a:visited {
+	color: black;
+}
+
+#namu_document a:hover {
+	text-decoration: underline;
+}
+
+#secondary_btn {
+	display: inline-block;
+}
+
+#secondary_btn a {
+	color: black;
+	text-decoration: none;
+}
+
+#secondary_btn a:hover {
+	background: #c6c6c6;
+}
+
+.secondary_btn {
+	border: 1px solid #ccc;
+	margin-right: -6px;
+	padding: 10px;
+}
+
+#category {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 650px;
+	margin: 28px auto;
+	padding: 4px;
+}
+
+#category a:link {
+	text-decoration: none;
+}
+
+#category a:hover{
+	text-decoration: underline;
+}
+
+#welcome {
+	text-align: center;
+}
+
+#welcome a:link {
+	color: #00A495;
+	text-decoration: none;
+}
+
+#welcome a:visited {
+	color: #00A495;
+	text-decoration: none;
+}
+
+#welcome a:hover {
+	text-decoration: underline;
+}
+/* --------------------------------------------- */
+#wiki_table {
+	width: 90%;
+	border: 3px solid #00A495;
+	margin: 0 auto;
+}
+
+#wiki_table a:link {
+	color: #0275D8;
+	text-decoration: none;
+}
+
+#wiki_table a:visited {
+	color: #0275D8;
+	text-decoration: none;
+}
+
+#wiki_table a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
