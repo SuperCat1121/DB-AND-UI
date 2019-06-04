@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js09</title>
+</head>
+<body>
+
+	<h1>1. 숫자형 형 변환 number()</h1>
+	<p>문자형의 정수, 실수 -> 숫자형으로 반환</p>
+	<input type="text" id="num">
+	<button onclick="numTest(num.value);">확인</button>
+	
+	<script type="text/javascript">
+		function numTest(val) {
+			var vals = Number(val)+5;
+			alert(vals);
+		}
+	</script>
+	
+	<h1>2. 정수형 형 변환 parseInt()</h1>
+	<p>문자형의 정수형태 -> 숫자형</p>
+	<input type="text" id="int">
+	<button onclick="intTest(int.value);">확인</button>
+	
+	<script type="text/javascript">
+		function intTest(val) {
+			var vals = parseInt(val)+10;
+			alert(vals);
+		}
+	</script>
+
+	<h1>3. 실수형 형 변환 parseFloat()</h1>
+	<p>문자형의 실수형태 -> 숫자형으로</p>
+	<input type="text" id="float">
+	<button onclick="floatTest(float.value);">확인</button>
+	
+	<script type="text/javascript">
+		function floatTest(val) {
+			var vals = parseFloat(val)+5.5;
+			alert(vals);
+		}
+	</script>
+	
+	<h1>4. 검증함수</h1>
+	<p>문자열로 된 코드를 자바스크립트로 읽어들인다</p>
+	<input type="text" name="evalue" placeholder="예) 5+10">
+	<button onclick="evalTest();">확인</button>
+	<span></span>
+	
+	<script type="text/javascript">
+		function evalTest() {
+			var vals = document.getElementsByName("evalue")[0];
+			if(confirm("작성하신 코드가 맞습니까 : " + vals.value)) {
+				document.getElementsByTagName("span")[0].innerHTML = "<b>계산결과 : " + eval(vals.value) + "</b>";
+			} else { // eval : 문자열로 입력된 수식을 그대로 계산해줌
+				vals.value = "다시 작성해 주세요 예) 5+10";
+			}
+		}
+	</script>
+	<hr>
+	
+	<input type="number" name="calc" class="a">
+	<input type="text" name="calc" class="a" list="calllist">
+	<datalist id="calllist">
+		<option value="+">
+		<option value="-">
+		<option value="*">
+		<option value="/">
+	</datalist>
+	<input type="number" name="calc" class="a">
+	<button onclick="calcTest()">확인</button>
+	<span></span>
+	
+	<script type="text/javascript">
+	/*
+		function calcTest() { // getElementsByName : 이름이 calc인 객체들을 배열로 받음
+			var vals = document.getElementsByName("calc");
+			document.getElementsByTagName("span")[1].innerHTML = "<b>계산결과 : " +
+																	eval(vals[0].value+vals[1].value+vals[2].value) + "</b>";
+		}
+	*/
+		function calcTest() {
+			var doc = document.querySelectorAll(".a"); // css 선택자를 이용해 객체를 가져옴 / 타입 : nodeList(배열)
+			var res = "";
+			for(var i=0;i<doc.length;i++) {
+				res += doc[i].value;
+			}
+			document.getElementsByTagName("span")[1].innerHTML = "<b>계산결과 : " + eval(res);
+		}
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

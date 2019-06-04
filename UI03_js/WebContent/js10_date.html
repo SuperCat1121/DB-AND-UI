@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js10</title>
+<script type="text/javascript">
+//	(window생략 가능)
+	window.onload=function() {
+		document.getElementsByTagName("button")[0].onclick=testDate01;
+		document.getElementsByTagName("button")[1].onclick=testDate02;
+		document.getElementsByTagName("button")[2].onclick=testDate03;
+		document.getElementsByTagName("button")[3].onclick=testDate04;
+		document.getElementsByTagName("button")[4].onclick=testDate05;
+	}
+	
+	function testDate01() {
+		var inputDate = document.getElementById("today");
+		
+		// 오늘 날짜 객체 생성
+		var date = new Date();
+		inputDate.innerHTML = date.toDateString()+"<br>";
+		inputDate.innerHTML += date.toLocaleDateString()+"<br>";
+		inputDate.innerHTML += date.toLocaleString()+"<br>";
+		inputDate.innerHTML += date.toLocaleTimeString()+"<br>";
+	}
+	
+	function testDate02() {
+		var dayOfWeek = ["일","월","화","수","목","금","토"];
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var day = date.getDate();
+		var week = date.getDay();
+		
+		document.getElementById("today").innerHTML = year+"-"+month+"-"+day+" "+dayOfWeek[week];
+	}
+	
+	function testDate03() {
+		var year = 2019;
+		var month = 4;
+		var day = 4;
+		var date = new Date(year,month-1,day);
+		
+		document.getElementById("specific").innerHTML = date;
+	}
+	
+	function testDate04() {
+		var dates = document.getElementById("dates").value;
+		var inputDate = document.getElementById("inputdate").value;
+		var date = new Date(dates);
+		date.setDate(date.getDate()+parseInt(inputDate));
+		
+		document.getElementById("result").value = date.toLocaleDateString();
+	}
+	
+	function testDate05() {
+		// hint : getTime() -> milliseconds로 반환
+		var start = new Date(document.getElementById("start").value);
+		var finish = new Date(document.getElementById("finish").value);
+		// 날짜 - 날짜 : 일수 -> document.getElementById("resDay").value = finish.getDate()-start.getDate();
+		var res = (finish.getTime() - start.getTime())/1000/60/60/24;
+		// 1000 나누면 1초 - 60나누면 1분 - 60나누면 1시간 - 24나누면 1일
+		document.getElementById("resDay").value = res;
+		
+		// 관리자 도구 콘솔창에 출력됨 (=system.out.println(start))
+		//  console.log(start);
+		//  console.log(finish);
+	}
+
+</script>
+</head>
+<body>
+	<h1>오늘 날짜 출력하기</h1>
+	<span id="today"></span><br>
+	<button>오늘 날짜</button>
+	<button>오늘 날짜(다른 표현)</button>
+	<hr>
+	
+	<h1>특정 날짜 출력하기</h1>
+	<span id="specific"></span>
+	<br>
+	<button>특정 날짜</button>
+	
+	<h1>경과 날짜 구하기</h1>
+	<label>지정 날짜</label>
+		<input type="date" id="dates" size="50"><br>
+	<label>경과일</label>
+		<input type="number" id="inputdate"><br>
+	<label>경과 후 날짜</label>
+		<input type="text" id="result" readonly="readonly"><br>
+	<button>경과 날짜</button>
+	<hr>
+	
+	<h1>D-Day</h1>
+	<label>시작 날짜</label>
+		<input type="date" size="50" id="start">
+	<br>
+	<label>종료 날짜</label>
+		<input type="date" size="50" id="finish">
+	<br>
+	<label>남은 일수</label>
+		<input type="text" readonly="readonly" id="resDay">
+	<button>남은 일수 구하기</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
