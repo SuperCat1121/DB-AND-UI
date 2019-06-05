@@ -21,21 +21,120 @@
 		alert(arrObj03[4]);
 	}
 */
+
+	function multiArr() {
+		var arrLen = 3;
+		var arr = new Array(arrLen);
+		for(var i=0;i<arr.length;i++) {
+			arr[i] = new Array(arrLen);
+		}
+		
+		arr[0][0] = "수박";
+		arr[0][1] = "바나나";
+		arr[0][2] = "키위";
+		
+		arr[1][0] = 1;
+		arr[1][1] = 2;
+		arr[1][2] = 3;
+		
+		arr[2][0] = ["test", "array"];
+		arr[2][1] = ["java", "script"];
+		arr[2][2] = ["kh", "정보", "교육원"];
+		
+		alert("배열 전체 : " + arr.toString());
+		alert("3 : " + arr[1][2]);
+		alert("정보교육원 : " + arr[2][2][1] + arr[2][2][2]);
+		
+	}
+	
+	function joinTest() {
+		var fruitArr = ["수박", "바나나", "키위", "레몬"];
+		var res = fruitArr.join("-");
+		alert(res);
+	}
+	
+	function sortTest01() {
+		var arr = ["a", "c", "b", "d"];
+		arr.sort();
+		alert(arr);
+	}
+	
+	function sortTest02() {
+		var arr = [11, 15, 3, 7, 5, 1, 9, 13];
+		arr.sort(compareNum);
+		alert(arr);
+	}
+	
+	function compareNum(a, b) {
+		return a-b;
+	}
+	
+	function reverseTest() {
+		var arr = [12, 25, 32, 41, 2, 70, 1];
+		arr.reverse();
+		alert(arr);
+	}
+	
+	function pushAndPop() {
+		var queue = new Array();
+		queue.push("1st");
+		queue.push("2nd");
+		queue.push("3rd");
+		alert(queue);
+		
+		// shift : 배열의 앞부분을 잘라내기해서 반환
+		var a = queue.shift();
+		alert(a);
+		// pop : 배열의 뒷부분을 잘라내기 해서 반환
+		var b = queue.pop();
+		alert(b)
+		// 남은건 2nd
+		alert(queue);
+	}
+	
+	function sliceTest() {
+		var arrTest = new Array(1,2,3,4,5,6,7);
+		var arr01 = arrTest.slice(1,4);
+		// slice(시작 인덱스, 끝 인덱스) : 시작부터 끝-1 까지 값을 새로운 배열로 반환
+		alert(arr01);
+		
+		var arrTest02 = new Array(4);
+		arrTest02[0] = new Array(1,2);
+		arrTest02[1] = new Array(3,4);
+		arrTest02[2] = new Array(5,6);
+		arrTest02[3] = new Array(7,8);
+		var arr02 = arrTest02.slice(1,3);
+		alert(arr02);
+		// slice를 해서 만든 배열은 본체와 같다(수정하면 같이 수정됨)
+		arr02[0][0] = 33;
+		alert(arr02);
+		alert(arrTest02);
+	}
+	
 </script>
 </head>
 <body>
 	<h1>배열 객체</h1>
 	<ul>
-		<li>다중 배열</li>
-		<li>join 함수</li>
+		<li onclick="multiArr();">다중 배열</li>
+		<li onclick="joinTest();">join 함수</li>
 		<li>
 			배열 정렬
 			<ul>
-				<li>sort() : 문자 정렬</li>
-				<li>sort() : 숫자 정렬</li>
-				<li>reverse() : 거꾸로 정렬</li>
+				<li onclick="sortTest01();">sort() : 문자 정렬</li>
+				<li onclick="sortTest02();">sort() : 숫자 정렬</li>
+				<li onclick="reverseTest();">reverse() : 거꾸로 정렬</li>
 			</ul>
 		</li>
+		<li onclick="pushAndPop();">
+			배열 저장 방식
+			<ul>
+				<li>push()</li>
+				<li>shift()</li>
+				<li>pop()</li>
+			</ul>
+		</li>
+		<li onclick="sliceTest();">배열의 부분을 추출하여 새로운 배열 생성 : slice()</li>
 	</ul>
 </body>
 </html>
