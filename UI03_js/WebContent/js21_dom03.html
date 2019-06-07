@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js21</title>
+<style type="text/css">
+
+	img, #imgView {
+		width: 300px;
+		height: 300px;
+	}
+
+</style>
+
+<script type="text/javascript">
+
+	function createImg() {
+		var rdoBtn = document.getElementsByName("rdoBtn");
+		var src ="";
+		for(var i=0;i<rdoBtn.length;i++) {
+			if(rdoBtn[i].checked) {
+				src = "img/"+rdoBtn[i].value;
+				break;
+			}
+		}
+		var img = document.createElement("img");
+		img.setAttribute("src", src);
+		var imgView = document.getElementById("imgView");
+		var chd = document.querySelector("#imgView > img");
+		imgView.replaceChild(img, chd);
+	}
+	
+	function removeImg() {
+		var imgView = document.getElementById("imgView").innerHTML = "<img src=''>";
+	}
+
+</script>
+</head>
+<body>
+	<input type="radio" name="rdoBtn" value="img1.png">그림1<br>
+	<input type="radio" name="rdoBtn" value="img2.png">그림2<br>
+	<input type="radio" name="rdoBtn" value="img3.png">그림3<br>
+	
+	<button onclick="createImg();">이미지 생성하기</button>
+	<button onclick="removeImg();">이미지 삭제하기</button>
+	
+	<div id="imgView"><img alt="image" src=""></div>
+</body>
+</html>

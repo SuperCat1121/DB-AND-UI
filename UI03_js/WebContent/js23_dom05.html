@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js23</title>
+<style type="text/css">
+
+	p {
+		border: 1px solid red;
+	}
+	
+	#test01, #test02 {
+		width: 300px;
+		height: 300px;
+		border: 1px solid black;
+	}
+
+</style>
+<script type="text/javascript">
+
+	function addAppend() {
+		var p = document.createElement("p");
+		p.textContent="자식 태그들 중 마지막에 붙인다";
+		
+		var fieldset = document.getElementById("addele");
+		fieldset.appendChild(p);
+	}
+	
+	var cnt = 1;
+	function addBefore() {
+		var newP = document.createElement("p");
+		
+		// newP.textContent와 같음 (밑에 두줄)
+		var txt = document.createTextNode("엘리먼트의 앞에 붙인다"+(cnt++));
+		newP.appendChild(txt);
+		
+		var oldDiv = document.querySelector("fieldset > div");
+		var fieldset = document.getElementById("addele");
+		
+		fieldset.insertBefore(newP, oldDiv); // 뒤에 oldDiv 앞에 newP를 붙이라는 뜻
+	}
+	
+	function moveElement() {
+		var moveEle = document.querySelector("fieldset").children[1];
+		var addEle = document.body;
+		addEle.appendChild(moveEle);
+	}
+	
+	// 문제
+	function test01() {
+		var addDiv = document.createElement("div");
+		addDiv.textContent="dom test";
+		
+		var oldDiv = document.getElementById("test01");
+		oldDiv.appendChild(addDiv);
+	}
+	
+	function test02() {
+		var moveEle = document.getElementById("test01").children[0];
+		var addEle = document.getElementById("test02");
+		if(moveEle == null) {
+			var emptycase = document.createElement("div");
+			emptycase.textContent="이동할게 없습니다!!";
+			addEle.appendChild(emptycase);
+		} else {
+			addEle.appendChild(moveEle);
+		}
+	}
+
+</script>
+</head>
+<body>
+	<h1>태그 추가하기</h1>
+	<button onclick="addAppend();">appendChild()</button>
+	<button onclick="addBefore();">insertBefore()</button>
+	<button onclick="moveElement();">엘리먼트 이동</button>
+	
+	<fieldset id="addele">
+		<legend>부모태그</legend>
+		<div>div태그</div>
+	</fieldset>
+	
+	<hr>
+	
+	<!-- 문제 -->
+	<h3>문제 1. test01 태그에 "dom test"라는 내용을 가진 div 태그를 추가하자</h3>
+	<button onclick="test01();">추가</button>
+	
+	<h3>문제 2. test01 태그에 추가된 태그들을 test02의 내부로 이동하자</h3>
+	<button onclick="test02();">이동</button>
+	
+	*test01
+	<div id="test01"></div>
+	*test02
+	<div id="test02"></div>
+</body>
+</html>
+<!-- children과  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

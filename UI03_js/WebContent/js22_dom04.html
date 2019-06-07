@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js22</title>
+<style type="text/css">
+
+	img {
+		vertical-align: middle;
+		width: 300px;
+		height: 300px;
+	}
+	
+	a {
+		font-size: 30px;
+		text-decoration: none;
+	}
+
+</style>
+
+<script type="text/javascript">
+/*
+	var imgNum = 1;
+	function rightBtn() {
+		var div = document.querySelector("div");
+		var chd = document.querySelector("img");
+		var img = document.createElement("img");
+		imgNum--;
+		if(imgNum==0) {
+			imgNum = 6;
+		}
+		img.setAttribute("src", "img/img"+imgNum+".png");
+		div.replaceChild(img, chd);
+	}
+	
+	function leftBtn() {
+		var div = document.querySelector("div");
+		var chd = document.querySelector("img");
+		var img = document.createElement("img");
+		imgNum++;
+		if(imgNum==7) {
+			imgNum = 1;
+		}
+		img.setAttribute("src", "img/img"+imgNum+".png");
+		div.replaceChild(img, chd);
+	}
+*/	
+	onload=function() {
+		var anchs = document.querySelectorAll("a");
+		var img = document.querySelector("img");
+		var count = 1;
+		
+		// 왼쪽 버튼
+		anchs[0].onclick=function() {
+			var imgAlt = img.getAttribute("alt");
+			if(imgAlt=="img1") {
+				count = 6;
+				img.setAttribute("alt", "img6");
+				img.setAttribute("src","img/img6.png");
+			} else {
+				img.setAttribute("alt", "img"+(--count));
+				img.setAttribute("src", "img/img"+count+".png");
+			}
+		}
+		// 오른쪽 버튼
+		anchs[1].onclick=function() {
+			
+		}
+	}
+
+</script>
+</head>
+<body>
+	<div>
+		<a href="#" id="lt">◀</a>
+		<img alt="img1" src="img/img1.png">
+		<a href="#" id="rt">▶</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js19</title>
+<script type="text/javascript">
+
+	function searchPar() {
+		var child2 = document.getElementsByTagName("p")[1];
+		var div = child2.parentNode;
+		alert(div.nodeName);
+		alert(div);
+		div.style.background = "pink";
+	}
+	
+	function searchChi() {
+		var div = document.getElementsByTagName("div");
+		var divChildren = div[0].childNodes;
+		
+		// child 3의 배경색을 blue로 변경하자
+		// enter 누르고 줄바꿈 해도 텍스트 노드 하나가 추가됨
+		divChildren[5].style.background = "blue";
+	}
+	
+	function pTest() {
+		var child3 = document.getElementsByTagName("p")[3];
+		var p = child3.parentNode;
+		p.style.background = "#ccc";
+	}
+	
+	function cTest() {
+		var div = document.getElementsByTagName("div")[2];
+		var divChildren = div.childNodes;
+		
+		divChildren[3].style.fontSize = "20pt";
+	}
+
+</script>
+</head>
+<body>
+	<h1>부모탐색, 자식탐색</h1>
+	
+	<div>
+		<p>child1</p>
+		<p>child2</p>
+		<p>child3</p>
+	</div>
+	
+	<button onclick="searchPar();">부모 탐색</button>
+	<button onclick="searchChi();">자식 탐색</button>
+	
+	<!-- 문제 -->
+	<h3 onclick="pTest();">1. test01의 부모태그 div에 배경색을 적용하자</h3>
+	<h3 onclick="cTest();">2. 마지막 div 태그의 자식노드인 test04태그를 찾아서
+					  폰트 크기를 20pt 적용하자.(childNodes로 찾자.)</h3>
+	
+	<div>
+		<p>test01</p>
+		<p>test02</p>
+	</div>
+	<div>
+		<p>test03</p>
+		<p>test04</p>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

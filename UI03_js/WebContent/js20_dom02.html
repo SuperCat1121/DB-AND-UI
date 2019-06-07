@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js20</title>
+<script type="text/javascript">
+
+	/*
+		엘리먼트 객체 생성하기 : createElement("tagName");
+		text 객체 생성하기 : createTextNode("text");
+		객체의 속성 생성하기 : createAttribute("attrName");
+		속성 추가하기 :
+			1) setAttributeNode(Attr);
+			2) setAttribute("attr", "value");
+	*/
+
+	function eleCreate() {
+		var div = document.createElement("div");      // <div></div>가 만들어짐
+		/* 1)
+		var attr = document.createAttribute("style"); // style="" 속성이 만들어짐
+		attr.nodeValue = "border: 1px solid red";     // style="border: 1px solid red" 가 만들어짐
+		div.setAttributeNode(attr);                   // 속성을 넣어줌
+		*/
+		// 2)
+		div.setAttribute("style", "border: 1px solid blue");		
+		var txt = document.createTextNode("엘리먼트 생성 메소드");
+		div.appendChild(txt); // <div style="border: 1px solid red">엘리먼트 생성 메소드</div> 가 만들어짐
+		
+		document.body.appendChild(div);
+	}
+
+</script>
+</head>
+<body>
+	<button onclick="eleCreate();">엘리먼트 생성하기</button>
+</body>
+</html>
