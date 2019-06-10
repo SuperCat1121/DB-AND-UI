@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js24</title>
+<script type="text/javascript">
+
+	function tableVal() {
+		var doc = document.forms[0]; // form 태그 가져와라
+		var vals = [doc.id.value, doc.pw.value, doc.addr.value, doc.phone.value];
+		
+		// 유효성 검사
+		for(var i=0;i<vals.length;i++) {
+			if(vals[i]==null || vals[i]=="" || vals[i]==undefined) {
+				alert("모든 정보를 입력해 주세요");
+				return; // 함수 종료
+			}
+		}
+		
+		// addtr 밑에 <tr><td>...
+		document.getElementById("addtr").appendChild(createRow(vals));
+	}
+	
+	function createRow(vals) {
+		var tr = document.createElement("tr");
+		for(var i=0;i<vals.length;i++) {
+			var td = document.createElement("td");
+			td.textContent = vals[i];
+			tr.appendChild(td);
+		}
+		
+		var dtd = document.createElement("td");
+		dtd.innerHTML = "<input type='button' value='삭제' onclick='delRow(this)'>";
+		tr.appendChild(dtd);
+		
+		return tr;
+	}
+	
+	function deleteTable() {
+		var tbody = document.getElementById("addtr");
+		while(tbody.hasChildNodes()) {
+			tbody.removeChild(tbody.lastChild);
+		}
+
+	}
+	
+	function delRow(row) {
+		var deltr = row.parentNode.parentNode;
+		//deltr.remove();
+		var tbody = document.getElementById("addtr");
+		tbody.removeChild(deltr);
+	}
+
+</script>
+</head>
+<body>
+	<form>
+		<table id="intable">
+			<tr>
+				<th>아이디:</th>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<th>비밀번호:</th>
+				<td><input type="text" name="pw"></td>
+			</tr>
+			<tr>
+				<th>주     소:</th>
+				<td><input type="text" name="addr"></td>
+			</tr>
+			<tr>
+				<th>전화번호:</th>
+				<td><input type="text" name="phone"></td>
+			</tr>
+		</table>
+		<input type="button" value="추가" onclick="tableVal();">
+		<input type="button" value="삭제" onclick="deleteTable();">
+	</form>
+	
+	<div id="addtable">
+		<table border="1" id="ctb">
+			<col width="100px">
+			<col width="100px">
+			<col width="300px">
+			<col width="100px">
+			<col width="100px">
+			<thead>
+				<tr>
+					<th>아 이 디</th>
+					<th>비밀번호</th>
+					<th>주    소</th>
+					<th>전화번호</th>
+					<th>삭    제</th>
+				</tr>
+			</thead>
+			<tbody id="addtr"></tbody>
+		</table>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

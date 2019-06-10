@@ -57,7 +57,7 @@
 		// hint : getTime() -> milliseconds로 반환
 		var start = new Date(document.getElementById("start").value);
 		var finish = new Date(document.getElementById("finish").value);
-		// 날짜 - 날짜 : 일수 -> document.getElementById("resDay").value = finish.getDate()-start.getDate();
+
 		var res = (finish.getTime() - start.getTime())/1000/60/60/24;
 		// 1000 나누면 1초 - 60나누면 1분 - 60나누면 1시간 - 24나누면 1일
 		document.getElementById("resDay").value = res;
