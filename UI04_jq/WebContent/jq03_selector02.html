@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq03</title>
+<style type="text/css">
+	img{width: 100px; height: 100px;}
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	function test01() {
+		$("img").css({"width":"200px","height":"200px"});
+	}
+	
+	function test02() {
+		// id는 유일한 하나 이기 때문에 똑같은 아이디 2개중 첫번째 요소만 hidden처리 됨
+		$("#selid").css("visibility","hidden");
+		// $("#selid").hide();
+		// $("#selid").css("display","none");
+	}
+	
+	function test03() {
+		$(".selclass").css("opacity","0.5");
+	}
+	
+	function test04() {
+		$("img[title*='2']").slideUp(2000);
+	}
+	
+	function test05() {
+		$("td > img").attr("src","img/img2.png");
+		//$("td > img").prop("src","img/img2.png");
+	}
+	
+</script>
+</head>
+<body>
+	<!-- ---------------------------------------------------------------------------- -->
+	<h1>1. 이미지들의 크기를 모두 200px * 200px으로 설정하자</h1>
+	<button onclick="test01();">클릭!</button>
+	<!-- ---------------------------------------------------------------------------- -->
+	<h1>2. 이미지들 중 id가 'selid'인 태그를 찾아 숨기자.</h1>
+	<button onclick="test02();">클릭!</button>
+	<!-- ---------------------------------------------------------------------------- -->
+	<h1>3. 이미지들 중 class가 'selclass'인 태그를 찾아 투명도 50% 적용하자</h1>
+	<button onclick="test03();">클릭!</button>
+	<!-- ---------------------------------------------------------------------------- -->
+	<h1>
+		4. 이미지들 중 속성값으로 탐색하여 slideUp 기능을 적용하자<br>
+		(title 속성값 중, '02'를 포함하는 img 태그를 찾아서 적용)<br>
+		(slideUp은 default:400ms -> 2000ms로 적용)<br>
+	</h1>
+	<button onclick="test04();">클릭!</button>
+	<!-- ---------------------------------------------------------------------------- -->
+	<h1>5. 이미지 바꾸기(td의 자식요소만 선택해서 바꾸자)</h1>
+	<button onclick="test05();">클릭!</button>
+	<!-- ---------------------------------------------------------------------------- -->
+	<br>
+	<!-- ---------------------------------------------------------------------------- -->
+	<table>
+		<tr>
+			<td><img alt="test01" src="img/img1.png" title="img1" id="selid"></td>
+			<td><img alt="test01" src="img/img1.png" title="img2"></td>
+			<td><img alt="test01" src="img/img1.png" title="img3" class="selclass"></td>
+			<td><img alt="test01" src="img/img1.png" title="img4" class="selclass"></td>
+		</tr>
+		<tr>
+			<td><img alt="test01" src="img/img1.png" title="img5" id="selid"></td>
+			<td><span><img alt="test01" src="img/img1.png" title="img6"></span></td>
+			<td><span><img alt="test01" src="img/img1.png" title="img7" class="selclass"></span></td>
+			<td><img alt="test01" src="img/img1.png" title="img8" class="selclass"></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

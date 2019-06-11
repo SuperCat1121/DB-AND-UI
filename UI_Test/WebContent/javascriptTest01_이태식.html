@@ -19,6 +19,7 @@
 	<script type="text/javascript">
 		function answer01() {
 			var num = document.getElementById("q01_num").value;
+			// !isNan 이면 반대로 트루가 숫자입니다가됨
 			if(isNaN(num)) {
 				alert("숫자가 아닙니다");
 			} else {
@@ -36,16 +37,13 @@
 	</fieldset>
 	<script type="text/javascript">
 		function answer02() {
-			var list = document.getElementById("nameList").textContent;
-			var input = document.getElementsByName("searchName")[0].value;
-			if(input == "") {
-				alert("문자를 입력하세요");
-				return;
-			}
-			if(list.indexOf(input) != -1) {
-				alert("이름이 있습니다");
-			} else {
-				alert("이름이 없습니다");
+			var str = document.getElementsByTagName("input")[1].value;
+			var ex = document.getElementById("nameList").innerHTML.split(" ");
+			alert(ex[0]);
+			if(ex.indexOf(str)==-1){
+				alert("해당 이름이 없습니다")
+			}else{
+				alert("해당 이름이 있습니다");
 			}
 		}
 	</script>

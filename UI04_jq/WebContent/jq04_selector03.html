@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq04</title>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	
+	function click01() {
+		var val = $(":text").val();
+		alert(val);
+	}
+	
+	function click02() {
+		var val = $(":radio").val();
+		$("#a").html(val);
+		
+	}
+	
+	function click03() {
+		var val = $(":checkbox").val();
+		$("#a").html(val);
+	}
+	
+	$(function() {
+		var sel = document.getElementsByTagName("select")[0];
+		sel.onchange=function() {
+			alert(sel.options[sel.selectedIndex].value);
+		}
+	});
+	
+</script>
+</head>
+<body>
+	<form>
+		<input type="text">
+		<input type="button" value="선택" onclick="click01();">
+		
+		<input type="radio" value="19/04/04~" onclick="click02();">19/04/04~
+		<input type="checkbox" value="자바 웹개발자 과정" onclick="click03();">java web 과정
+		
+		<div id="a"></div>
+		
+		<select>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+		
+	</form>
+</body>
+</html>

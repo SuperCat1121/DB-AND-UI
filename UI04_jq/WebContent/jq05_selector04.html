@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq05</title>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		$("#signal").submit(function() {
+			// 유효성 검사
+			if($(".infobox").val()==null || $(".infobox").val()=="") {
+				$(".error").show();
+				return false;
+			}
+		});
+		
+		$("#confirm").click(function() {
+			var total = 0;
+			$("#result").empty();
+			if($("input[name=chk]:checked").length==0) {
+				alert("하나 이상 체크해 주세요!");
+			} else {
+				$("input[name=chk]:checked").each(function(i) {
+					var chk = $("input[name=chk]:checked").eq(i);
+					var book = chk.next().text();
+					var price = chk.val();
+					$("#result").append(book+" 가격 : "+price+"<br>");
+					total += Number(price);
+				});
+				$("#result").append("총가격 : "+total+"<br>");
+			}
+		});
+		
+		$("input[name='chk']").click(function() {
+			if($("input[name='chk']").length==$("input[name='chk']:checked").length) {
+				$("input[name='all']").prop("checked", true);
+			} else {
+				$("input[name='all']").prop("checked", false);
+			}
+		});
+		
+	});
+	
+	function allChk(chk) {
+		// $("input[name='chk']").attr("checked", chk);
+		$("input[name='chk']").each(function() {
+			$(this).prop("checked", chk);
+		});
+	}
+	/*
+		attr("attrName") / prop("attrName") : 엘리먼트의 속성 값을 가져온다
+		.attr() : HTML의 속성(attribute)            -> html문서 자체에 박는다
+		.prop() : JavaScript에서 프로퍼티(property) -> 자바스크립트 객체로 가져와서 수정한다(html 문서와 상관이 없어짐)
+		
+		****사용****
+		attr("attrName","attrValue") / prop("attrName","attrValue") : 엘리먼트에 속성값을 넣는다
+	*/
+
+</script>
+</head>
+<body>
+	<form id="signal">
+		<div>
+			<span class="label">User ID</span>
+			<input type="text" class="infobox" name="userid">
+			<span class="error" hidden="" style="color:red;">반드시 입력하세요</span>
+		</div>
+		<input type="submit" value="입력하기" class="submit">
+	</form>
+	
+	<hr>
+	
+	<fieldset style="width: 300px">
+		<legend>체크 여부 확인</legend>
+		<input type="checkbox" name="all" onclick="allChk(this.checked);">전체선택<br>
+		<input type="checkbox" name="chk" value="20000"><b>java</b><br>
+		<input type="checkbox" name="chk" value="25000"><b>oracle</b><br>
+		<input type="checkbox" name="chk" value="30000"><b>html/css</b><br>
+		
+		<input type="button" value="확인" id="confirm"><br>
+		<span>선택한 책 가격</span>
+		<div id="result"></div>
+	</fieldset>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

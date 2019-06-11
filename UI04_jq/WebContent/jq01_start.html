@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq01</title>
+<style type="text/css">
+	img {width: 250px; height: 250px;}
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+/*
+	jquery 기본 작성법 : selector 표현식
+	(css 작성방식 + javascript 작성방식)
+	작성 예)
+	->	$("셀렉터").메서드();
+	->	$("p").css("color","red");
+	
+	기능 구현 방법!!
+	$(function() {
+		// 작성
+	});
+	
+	$(document).ready(function() {
+		// 작성
+	});
+	
+	function *() {
+		// 작성
+	}
+	
+*/
+	function highlight() {
+		$("#list01 > li").eq(0).css("background-color","skyblue");
+	}
+	
+	// onload 와 같음
+	$(document).ready(function() {
+		$("img").click(function() {
+			alert("이미지 클릭!");
+			$(this).hide();
+		});
+	});
+	
+	function showImg() {
+		$("img").show();
+	}
+	
+	function smallImg() {
+		$("img").css("width", "100px").css("height", "100px");
+	}
+
+	function bigImg() {
+		$("img").css({"width":"250px", "height":"250px"});
+	}
+	
+	function toggleImg() {
+		$("img").toggle();
+	}
+	
+	function addImg() {
+		// img tag의 마지막을 찾아서, 그 다음에 <img> 태그를 추가하자
+		$("img").last().after("<img src='img/img1.png'>");
+	}
+	
+</script>
+</head>
+<body>
+	<h1>jQuery 시작!</h1>
+	<ul id="list01">
+		<li>1. 셀릭터 표현식</li>
+		<li>2. DOM 탐색</li>
+		<li>3. 이벤트</li>
+		<li>4. 이펙트</li>
+		<li>5. AJAX</li>
+	</ul>
+	
+	<button onclick="highlight();">리스트 강조하기!</button>
+	
+	<hr>
+	
+	<button onclick="showImg();">이미지 보이기</button><br>
+	<button onclick="smallImg();">이미지 축소</button><br>
+	<button onclick="bigImg();">이미지 확대</button><br>
+	<button onclick="toggleImg();">이미지 숨기기/보이기</button><br>
+	<button onclick="addImg();">이미지 추가</button><br>
+	
+	<br>
+	
+	<div><img alt="test" src="img/img1.png"></div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
