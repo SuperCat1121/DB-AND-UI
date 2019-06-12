@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq08</title>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("p:eq(0)").add("span").css("color","red");
+		$("div").children().click(function() {
+			if($(this).prop("tagName")=="SPAN") {
+				alert("span 태그 클릭");
+				$(this).css("background-color","black");
+			}
+			if($(this).is("p")) {
+				$(this).css("background-color","pink");
+			}
+			// b태그 클릭하면 처음상태로
+			if($(this).is("b")) {
+				$("div").children().css("background-color","");
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>add()</p>
+		<span>add() : 선택한 엘리먼트에 추가적으로 selector 표현식을 작성</span>
+		<p>is()</p>
+		<b>선택한 엘리먼트들 중에 구하는 엘리먼트가 있는지 확인</b>
+	</div>
+</body>
+</html>

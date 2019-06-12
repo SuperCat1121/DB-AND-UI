@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq13</title>
+<style type="text/css">
+	.main_menu{width: 300px;}
+	.sub_menu1{cursor: pointer;}
+	.sub_menu2{display: none; cursor: default;}
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("b").click(function() {
+			$(this).next().slideToggle(700);
+			$(this).parent().siblings().children("ul").slideUp(700);
+			// 한줄로 만들기
+			//$(this).next().slideToggle(700).end().parent().siblings().children("ul").slideUp(700);
+			// find, children 차이
+		});
+	});
+</script>
+</head>
+<body>
+	<p>메뉴 만들기</p>
+	<ul type="square" class="main_menu">
+		<li class="sub_menu1"><b>(1)css 셀렉터</b>
+			<ul type="circle" class="sub_menu2">
+				<li>tag</li>
+				<li>id</li>
+				<li>class</li>
+				<li>p c</li>
+				<li>p &gt; c</li>
+				<li>nth-child</li>
+				<li>first-child</li>
+				<li>last-child</li>
+			</ul>
+		</li>
+		<li class="sub_menu1"><b>(2) 속성 셀렉터</b>
+			<ul type="circle" class="sub_menu2">
+				<li>[attr]</li>
+				<li>[attr=value]</li>
+				<li>[attr!=value]</li>
+			</ul>
+		<li class="sub_menu1"><b>(3)폼 셀렉터</b>
+			<ul type="circle" class="sub_menu2">
+				<li>:input type</li>
+			</ul>
+		</li>
+		<li class="sub_menu1"><b>(4)사용자 정의 셀렉터</b>
+			<ul type="circle" class="sub_menu2">
+				<li>:eq(n)</li>
+				<li>:first</li>
+				<li>:last</li>
+				<li>:even</li>
+				<li>:odd</li>
+				<li>:parent</li>
+			</ul>
+		</li>
+	</ul>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
