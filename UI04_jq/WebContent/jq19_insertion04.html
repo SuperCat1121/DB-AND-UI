@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq19</title>
+<style type="text/css">
+
+	.box {border: 2px solid red;}
+	#menu {background: pink; text-align: right;}
+	#menu div {display: inline-block; margin-right: 10px;}
+	a {text-decoration: none; font-size: 20px;}
+
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		//var $box = $("<div>").addClass("box");
+		var $box = $("<div>", {
+			class : "box"
+		});
+		$(".sub_menu:first").wrap($box);
+		
+		$(".sub_menu").click(function() {
+			$(".sub_menu").each(function() {
+				if($(this).parent().is(".box")) {
+					$(this).unwrap(".box");
+				}
+			});
+			
+			$(this).wrap($box);
+			
+		});
+		
+		// $("a").wrapInner("<span></span>"); a태그 안을 감싸줌
+		// $("a").wrapAll("<b></b>");         a태그들을 다 모아서 감싸줌
+		
+	});
+
+</script>
+</head>
+<body>
+	<div id="menu">
+		<div class="sub_menu">
+			<a href="#"><span>국비지원</span></a>
+		</div>
+		<div class="sub_menu">
+			<a href="#">훈련검색</a>
+		</div>
+		<div class="sub_menu">
+			<a href="#">기관검색</a>
+		</div>
+		<div class="sub_menu">
+			<a href="#">질문답변</a>
+		</div>
+		<div class="sub_menu">
+			<a href="#">자 격 증</a>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

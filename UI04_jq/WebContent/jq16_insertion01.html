@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq16</title>
+<style type="text/css">
+
+	div{border: 1px solid red;}
+	.prepend{border: 1px dotted blue;}
+	.append{border: 1px dotted green;}
+
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		
+		var cnt = 0;
+		$("button:eq(0)").click(function() {
+			$("div").prepend($("<p>").addClass("prepend").text("prepend"+(cnt++)));
+		});
+		// $("<p>") --> 자바스크립트에서의 createElement("p");
+		$("button:eq(1)").click(function() {
+			$("div").append($("<p>").addClass("append").text("append"+(cnt++)));
+		});
+		
+		$("button:eq(2)").click(function() {
+			$("div").html("<b>html 요소를 바꾼다.</b>");
+		});
+		
+		$("button:eq(3)").click(function() {
+			$("div").text("<b>text 요소를 바꾼다.</b>");
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+
+	<button>prepend하기</button>
+	<button>append하기</button>
+	<button>html하기</button>
+	<button>text하기</button>
+	
+	<div>
+		<p>내부 삽입 하기 1</p>
+		<p>내부 삽입 하기 2</p>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

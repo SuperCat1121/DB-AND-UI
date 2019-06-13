@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq17</title>
+<style type="text/css">
+
+	img {width: 150px; height: 150px; float: left;}
+	#menubox {position: relative;}
+	#menu {overflow: auto;}
+	.sel {width: 140px; height: 140px; border: 5px dotted red; position: absolute; left: 300px;}
+	button {width: 150px; height: 50px; margin-left: 300px;}
+
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		setInterval(function() {
+			var div=$("#menu");
+			var i;
+			//var i = 1;
+			//$(".active").first().appendTo(div);
+			$(div).append($(".active").first());
+			$("h1").text(i++);
+		}, 50);
+		
+		$("button").click(function() {
+			$("img").toggleClass("active");
+			if($("button").text()=="start") {
+				$("button").text("stop");
+			} else {
+				$("button").text("start");
+				alert($("img:eq(2)").attr("alt")+"이(가) 선택되었습니다!!");
+			}
+		});
+	});
+
+</script>
+</head>
+<body>
+
+	<h1>선택해 주세요</h1>
+	
+	<div id="menubox">
+		<div class="sel"></div>
+		<div id="menu">
+			<img alt="그림1" src="img/img1.png">
+			<img alt="그림2" src="img/img2.png">
+			<img alt="그림3" src="img/img3.png">
+			<img alt="그림4" src="img/img4.png">
+			<img alt="그림5" src="img/img5.png">
+			<img alt="그림6" src="img/img6.png">
+		</div>
+		<button>start</button>
+	</div>
+	
+</body>
+</html>

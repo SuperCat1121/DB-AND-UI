@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq20</title>
+<style type="text/css">
+
+	div {border: 2px solid red; width: 200px; padding: 10px 10px;}
+	p {background: yellow;}
+	h1 {border: 1px solid blue;}
+	
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		
+		$("p:eq(0)").click(function() {
+			$(this).remove();
+		});
+		
+		$("p:eq(1)").click(function() {
+			$(this).parent().empty();
+		});
+		
+		$("p:eq(2)").click(function() {
+			var ele = $(this).detach();
+			$("h1").append(ele);
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+
+	<h1>엘리먼트 제거하기</h1>
+	
+	<div>
+		<p>remove</p>
+		<p>empty(비우기)</p>
+		<p>detach(잘라내기)</p>
+	</div>
+	
+</body>
+</html>

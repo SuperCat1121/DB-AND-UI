@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jq14</title>
+<style type="text/css">
+	img{width: 200px; height: 200px;}
+	.addSize{width: 300px; height: 300px;}
+	.onOff{display: none;}
+</style>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		$("img").click(function() {
+			if($(this).hasClass("addSize")) {
+				$(this).removeClass("addSize").attr("title","이미지 축소");
+			} else {
+				$(this).addClass("addSize").attr("title","이미지 확대");
+			}
+		});
+		
+		$("#btn").click(function() {
+			/*
+			if($("img").hasClass("onOff")) {
+				$("img").removeClass("onOff");
+			} else {
+				$("img").addClass("onOff");
+			} */
+			$("img").toggleClass("onOff");
+		});
+	});
+
+</script>
+</head>
+<body>
+
+	<button id="btn">이미지 on/off</button>
+	<br>
+	<img alt="img01" src="img/img1.png" title="이미지1">
+	<img alt="img02" src="img/img2.png" title="이미지2">
+	<img alt="img03" src="img/img3.png" title="이미지3">
+	
+</body>
+</html>
