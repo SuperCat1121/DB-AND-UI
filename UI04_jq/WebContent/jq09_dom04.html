@@ -16,9 +16,11 @@
 		$(".menu > div").css("display","none");
 		
 		$(".menu").hover(function() {
-			$(this).children("div").css("display","block");
+			// $(this).children("div").css("display","block");
+			$(this).children("div").slideToggle();
 		}, function() {
-			$(this).children("div").css("display","none");
+			// $(this).children("div").css("display","none");
+			$(this).children("div").slideToggle();
 		});
 		
 		/*
